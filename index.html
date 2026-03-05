@@ -1,22 +1,4 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>EDC</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      color: white;
-      text-align: center;
-    }
-    .container {
-      margin-top: 120px;
-    }
-    h1 {
-      font-size: 50px;
-      margin-bottom: 10px;
-    }<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -32,21 +14,28 @@
 
 <body>
 
-<!-- NAVIGATION -->
+<!-- =========================
+NAVIGATION
+========================= -->
 
-<header>
+<header class="header">
+
+<div class="nav-container">
 
 <div class="logo">EDC</div>
 
-<nav>
+<div class="menu-toggle" id="menuToggle">
+☰
+</div>
+
+<nav id="navMenu">
 
 <ul>
 
 <li><a href="#home">Home</a></li>
 <li><a href="#intro">Introduction</a></li>
 <li><a href="#overview">Company Overview</a></li>
-<li><a href="#services">Our Services</a></li>
-<li><a href="#clients">Clients</a></li>
+<li><a href="#services">Services</a></li>
 <li><a href="#team">Team</a></li>
 <li><a href="#gallery">Gallery</a></li>
 <li><a href="#contact">Contact</a></li>
@@ -55,11 +44,17 @@
 
 </nav>
 
+</div>
+
 </header>
 
-<!-- HERO -->
+<!-- =========================
+HERO SECTION
+========================= -->
 
 <section id="home" class="hero">
+
+<div class="hero-overlay"></div>
 
 <div class="hero-content">
 
@@ -73,27 +68,30 @@
 
 </section>
 
-<!-- INTRO -->
+<!-- =========================
+INTRODUCTION
+========================= -->
 
 <section id="intro" class="section">
 
-<div class="two-column">
+<div class="container two-column">
 
-<div>
+<div class="text">
 
 <h2>Introduction</h2>
 
 <p>
-English Development Consultants Co. Ltd.
-provides professional education consulting
+English Development Consultants Co. Ltd. provides professional education consulting
 services and teacher recruitment across Thailand.
 </p>
 
 </div>
 
-<div>
+<div class="image">
 
-<img class="float-img" src="images/intro.jpg">
+<img src="images/intro.jpg"
+onerror="this.src='https://via.placeholder.com/600x400?text=EDC+Image'"
+alt="Introduction Image">
 
 </div>
 
@@ -101,33 +99,39 @@ services and teacher recruitment across Thailand.
 
 </section>
 
-<!-- COMPANY OVERVIEW -->
+<!-- =========================
+COMPANY OVERVIEW
+========================= -->
 
 <section id="overview" class="section green">
+
+<div class="container">
 
 <h2>Company Overview</h2>
 
 <div class="overview-grid">
 
-<div>
+<div class="overview-card">
 
 <h3>Our Mission</h3>
 
 <p>
-To empower Thai learners with transformative
-English skills through education innovation.
+To empower Thai learners with transformative English skills
+through education innovation.
 </p>
 
 </div>
 
-<div>
+<div class="overview-card">
 
 <h3>Our Vision</h3>
 
 <p>
-To be a leading educational consulting company
-connecting international teachers with Thai schools.
+To be a leading educational consulting company connecting
+international teachers with Thai schools.
 </p>
+
+</div>
 
 </div>
 
@@ -135,26 +139,47 @@ connecting international teachers with Thai schools.
 
 </section>
 
-<!-- SERVICES -->
+<!-- =========================
+SERVICES
+========================= -->
 
 <section id="services" class="section">
+
+<div class="container">
 
 <h2>Our Services</h2>
 
 <div class="service-grid">
 
-<div class="card">Teacher Recruitment</div>
-<div class="card">Training Programs</div>
-<div class="card">Educational Consulting</div>
-<div class="card">Curriculum Support</div>
+<div class="card">
+Teacher Recruitment
+</div>
+
+<div class="card">
+Training Programs
+</div>
+
+<div class="card">
+Educational Consulting
+</div>
+
+<div class="card">
+Curriculum Support
+</div>
+
+</div>
 
 </div>
 
 </section>
 
-<!-- TEAM -->
+<!-- =========================
+TEAM
+========================= -->
 
 <section id="team" class="section green">
+
+<div class="container">
 
 <h2>Meet Our Team</h2>
 
@@ -162,7 +187,8 @@ connecting international teachers with Thai schools.
 
 <div class="member">
 
-<img src="images/team1.jpg">
+<img src="images/team1.jpg"
+onerror="this.src='https://via.placeholder.com/300x300?text=Team+Member'">
 
 <p>Team Member</p>
 
@@ -170,7 +196,8 @@ connecting international teachers with Thai schools.
 
 <div class="member">
 
-<img src="images/team2.jpg">
+<img src="images/team2.jpg"
+onerror="this.src='https://via.placeholder.com/300x300?text=Team+Member'">
 
 <p>Team Member</p>
 
@@ -178,9 +205,12 @@ connecting international teachers with Thai schools.
 
 <div class="member">
 
-<img src="images/team3.jpg">
+<img src="images/team3.jpg"
+onerror="this.src='https://via.placeholder.com/300x300?text=Team+Member'">
 
 <p>Team Member</p>
+
+</div>
 
 </div>
 
@@ -188,26 +218,43 @@ connecting international teachers with Thai schools.
 
 </section>
 
-<!-- GALLERY -->
+<!-- =========================
+GALLERY
+========================= -->
 
 <section id="gallery" class="section">
+
+<div class="container">
 
 <h2>Photo Gallery</h2>
 
 <div class="gallery">
 
-<img src="images/gallery/1.jpg">
-<img src="images/gallery/2.jpg">
-<img src="images/gallery/3.jpg">
-<img src="images/gallery/4.jpg">
+<img src="images/gallery/1.jpg"
+onerror="this.src='https://via.placeholder.com/400x300?text=Gallery+Photo'">
+
+<img src="images/gallery/2.jpg"
+onerror="this.src='https://via.placeholder.com/400x300?text=Gallery+Photo'">
+
+<img src="images/gallery/3.jpg"
+onerror="this.src='https://via.placeholder.com/400x300?text=Gallery+Photo'">
+
+<img src="images/gallery/4.jpg"
+onerror="this.src='https://via.placeholder.com/400x300?text=Gallery+Photo'">
+
+</div>
 
 </div>
 
 </section>
 
-<!-- CONTACT -->
+<!-- =========================
+CONTACT
+========================= -->
 
 <section id="contact" class="section green">
+
+<div class="container">
 
 <h2>Contact Us</h2>
 
@@ -217,10 +264,34 @@ connecting international teachers with Thai schools.
 
 <p>EnglishDC.th@gmail.com</p>
 
+</div>
+
 </section>
 
-<script src="js/animation.js"></script>
+<!-- =========================
+FOOTER
+========================= -->
+
+<footer class="footer">
+
+<p>© 2026 English Development Consultants Co. Ltd.</p>
+
+</footer>
+
+<!-- =========================
+MOBILE NAV SCRIPT
+========================= -->
+
+<script>
+
+const toggle = document.getElementById("menuToggle");
+const nav = document.getElementById("navMenu");
+
+toggle.addEventListener("click", () => {
+nav.classList.toggle("active");
+});
+
+</script>
 
 </body>
-
 </html>
