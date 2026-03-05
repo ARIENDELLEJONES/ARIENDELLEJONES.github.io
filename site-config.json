@@ -1,0 +1,148 @@
+{
+  "general": {
+    "company": {
+      "name": "English Development Consultants Co. Ltd.",
+      "shortName": "EDC",
+      "email": "info@edc-thailand.com",
+      "website": "www.edc-thailand.com",
+      "phone": "+66 2 123 4567",
+      "address": "Bangkok, Thailand"
+    }
+  },
+  "navigation": {
+    "nav": [
+      {
+        "label": "Home",
+        "link": "#home"
+      },
+      {
+        "label": "Services",
+        "link": "#services"
+      },
+      {
+        "label": "Team",
+        "link": "#team"
+      },
+      {
+        "label": "Contact",
+        "link": "#contact"
+      }
+    ],
+    "applyText": "Apply Now",
+    "applyLink": "http://54.252.186.9"
+  },
+  "hero": {
+    "tagline": "Be Part of Our Team",
+    "image": "images/intro.jpg"
+  },
+  "theme": {
+    "colors": {
+      "primary": "#1e3a5f",
+      "secondary": "#2ecc71",
+      "accent": "#3498db"
+    }
+  },
+  "content": {
+    "intro": {
+      "title": "Welcome to EDC",
+      "content": "Your trusted partner for education consulting."
+    },
+    "services": [
+      {
+        "icon": "👨‍🏫",
+        "title": "Teacher Recruitment",
+        "desc": "We recruit qualified teachers."
+      },
+      {
+        "icon": "📚",
+        "title": "Training Programs",
+        "desc": "Professional development."
+      },
+      {
+        "icon": "💼",
+        "title": "Consulting",
+        "desc": "Expert consultation."
+      },
+      {
+        "icon": "📋",
+        "title": "Curriculum",
+        "desc": "Tailored curricula."
+      }
+    ]
+  },
+  "gallery": {
+    "members": [
+      {
+        "image": "images/gallery/1.jpg",
+        "caption": "",
+        "order": 1
+      },
+      {
+        "image": "images/gallery/2.jpg",
+        "caption": "",
+        "order": 2
+      },
+      {
+        "image": "images/gallery/3.jpg",
+        "caption": "",
+        "order": 3
+      },
+      {
+        "image": "images/gallery/4.jpg",
+        "caption": "",
+        "order": 4
+      }
+    ],
+    "columns": "4"
+  },
+  "team": {
+    "members": [
+      {
+        "name": "Dr. Somchai",
+        "position": "Director",
+        "image": "images/team1.jpg",
+        "order": 1,
+        "alignment": "center"
+      },
+      {
+        "name": "Ms. Natnaree",
+        "position": "Recruitment",
+        "image": "images/team2.jpg",
+        "order": 2,
+        "alignment": "center"
+      },
+      {
+        "name": "Mr. Piyawat",
+        "position": "Coordinator",
+        "image": "images/team3.jpg",
+        "order": 3,
+        "alignment": "center"
+      }
+    ],
+    "columns": "3",
+    "globalAlignment": "center"
+  },
+  "popup": {
+    "enabled": true,
+    "title": "Welcome!",
+    "message": "Check out our latest updates.",
+    "bgType": "color",
+    "bgColor": "#1e3a5f",
+    "textColor": "#ffffff",
+    "btnText": "Learn More",
+    "btnLink": "#services"
+  },
+  "contact": {
+    "address": "Bangkok, Thailand",
+    "phone": "+66 2 123 4567",
+    "email": "info@edc-thailand.com"
+  },
+  "footer": {
+    "about": "Your trusted partner.",
+    "copyright": "2024 EDC"
+  },
+  "social": {
+    "facebook": "https://facebook.com/",
+    "line": "https://line.me/"
+  }
+}
