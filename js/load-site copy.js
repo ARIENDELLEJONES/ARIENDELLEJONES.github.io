@@ -53,7 +53,7 @@ async function initSite() {
  * Load site configuration from JSON file
  */
 async function loadSiteConfig() {
-    const response = await fetch('/api/config');
+    const response = await fetch('./data/site-config.json');
     if (!response.ok) {
         throw new Error('Failed to load site configuration');
     }
