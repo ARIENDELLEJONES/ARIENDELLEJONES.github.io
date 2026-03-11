@@ -51,8 +51,22 @@ async function initSite() {
 
 /**
  * Load site configuration from JSON file
+ * First checks localStorage for saved admin changes (for offline editing workflow)
  */
 async function loadSiteConfig() {
+    // First check localStorage for admin-saved changes
+    const localStorageConfig = localStorage.getItem('edc_config_backup');
+    if (localStorageConfig) {
+        try {
+            siteConfig = JSON.parse(localStorageConfig);
+            console.log('Loaded config from localStorage (admin edits)');
+            return siteConfig;
+        } catch (e) {
+            console.warn('Failed to parse localStorage config, falling back to file');
+        }
+    }
+    
+    // Fall back to loading from JSON file
     const response = await fetch('./data/site-config.json');
     if (!response.ok) {
         throw new Error('Failed to load site configuration');
