@@ -23,7 +23,7 @@ async function loadNavbar() {
 
     try {
         // Load config from API
-        const response = await fetch('/api/config');
+        const response = await fetch('data/site-config.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
