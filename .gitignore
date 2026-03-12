@@ -1,0 +1,18 @@
+# AI history
+.llm-chat-history/
+
+# Node backend (local development only - not needed for GitHub Pages)
+node_modules/
+server.js
+package.json
+package-lock.json
+
+# Admin system (not needed for frontend)
+admin.html
+js/admin-editor.js
+js/github-publisher.js
+
+# System files
+.DS_Store
+Thumbs.db
+

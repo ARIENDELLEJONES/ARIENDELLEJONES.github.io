@@ -1,0 +1,37 @@
+<!-- ============================================
+     NAVIGATION BAR - Customizable
+     Edit this file to change navigation links
+============================================== -->
+<nav class="navbar">
+    <div class="container">
+        <a href="index.html" class="logo">
+<!-- Company Logo -->
+            <img src="images/intro.jpg" alt="EDC Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" style="max-height: 50px;">
+            <span style="display: none;">EDC</span>
+        </a>
+        
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <ul class="nav-links" id="navLinks">
+            <!-- Navigation Links - Edit href and text below -->
+            <li><a href="index.html" data-section="home">Home</a></li>
+            <li><a href="#introduction" data-section="introduction">Introduction</a></li>
+            <li><a href="#overview" data-section="overview">Company Overview</a></li>
+            <li><a href="#services" data-section="services">Services</a></li>
+            <li><a href="#clients" data-section="clients">Clients</a></li>
+            <li><a href="#team" data-section="team">Team</a></li>
+            <li><a href="#gallery" data-section="gallery">Gallery</a></li>
+            <li><a href="#contact" data-section="contact">Contact</a></li>
+            <!-- Apply Now Button - Link to external application -->
+            <li><a href="http://54.252.186.9" class="btn-apply" target="_blank" rel="noopener noreferrer">Apply Now</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-overlay" onclick="toggleMobileMenu()"></div>
+

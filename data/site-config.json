@@ -1,0 +1,448 @@
+{
+    "site": {
+        "name": "English Development Consultants Co. Ltd.",
+        "description": "Education consulting and teacher recruitment in Thailand",
+        "logo": "images/intro.jpg",
+        "favicon": "images/intro.jpg"
+    },
+    "navigation": {
+        "enabled": true,
+        "logo": {
+            "text": "EDC",
+            "link": "index.html"
+        },
+        "menu": [
+            {
+                "text": "Home",
+                "link": "#home",
+                "order": 1
+            },
+            {
+                "text": "Introduction",
+                "link": "#introduction",
+                "order": 2
+            },
+            {
+                "text": "Company Overview",
+                "link": "#overview",
+                "order": 3
+            },
+            {
+                "text": "Services",
+                "link": "#services",
+                "order": 4
+            },
+            {
+                "text": "Clients",
+                "link": "#clients",
+                "order": 5
+            },
+            {
+                "text": "Team",
+                "link": "#team",
+                "order": 6
+            },
+            {
+                "text": "Gallery",
+                "link": "#gallery",
+                "order": 7
+            },
+            {
+                "text": "Contact",
+                "link": "#contact",
+                "order": 8
+            }
+        ],
+        "applyButton": {
+            "text": "Apply Now",
+            "link": "http://54.252.186.9",
+            "enabled": true
+        },
+        "style": {
+            "fontFamily": "'Arial', sans-serif",
+            "fontSize": "16px",
+            "textColor": "#1a202c",
+            "backgroundColor": "#ffffff",
+            "hoverColor": "#38a169",
+            "mobileStyle": "hamburger"
+        }
+    },
+    "hero": {
+        "enabled": true,
+        "title": "English Development Consultants Co. Ltd.",
+        "tagline": "Be Part of Our Team",
+        "buttonText": "Apply Now",
+        "buttonLink": "http://54.252.186.9",
+        "backgroundImage": "images/intro.jpg",
+        "overlayColor": "rgba(26, 54, 93, 0.85)",
+        "overlayGradient": "rgba(26, 54, 93, 0.9), rgba(56, 161, 105, 0.3)",
+        "textColor": "#ffffff"
+    },
+    "introduction": {
+        "enabled": true,
+        "title": "Welcome to EDC",
+        "content": [
+            "English Development Consultants Co. Ltd. (EDC) is a leading education consulting and teacher recruitment company operating in Thailand. We specialize in connecting qualified educators with prestigious educational institutions across the country.",
+            "With years of experience in the education sector, we understand the importance of quality English language education and its impact on future generations. Our mission is to bridge the gap between talented teachers and schools that need them.",
+            "We provide comprehensive recruitment services, training programs, and ongoing support to ensure both teachers and educational institutions achieve their goals. Partner with us to transform English language education in Thailand."
+        ],
+        "image": "images/intro.jpg",
+        "imageAlt": "EDC Office or Team"
+    },
+    "overview": {
+        "enabled": true,
+        "title": "Company Overview",
+        "subtitle": "Our core values drive everything we do",
+        "mission": {
+            "title": "Our Mission",
+            "icon": "🎯",
+            "content": "To provide exceptional education consulting services and recruit highly qualified English language teachers to transform the way English is taught in Thailand. We are committed to bridging the gap between education professionals and institutions, ensuring quality education reaches every student."
+        },
+        "vision": {
+            "title": "Our Vision",
+            "icon": "👁️",
+            "content": "To become the most trusted and respected education consulting company in Thailand and Southeast Asia, recognized for our commitment to educational excellence, teacher development, and creating meaningful connections that shape the future of English language education."
+        }
+    },
+    "services": {
+        "enabled": true,
+        "title": "Our Services",
+        "subtitle": "Comprehensive solutions for all your education needs",
+        "layout": {
+            "columns": 4,
+            "alignment": "center",
+            "itemAlignment": "left"
+        },
+        "items": [
+            {
+                "title": "Teacher Recruitment",
+                "icon": "👨‍🏫",
+                "content": "We specialize in recruiting qualified English teachers from around the world. Our rigorous screening process ensures we match the right teachers with the right institutions, taking into account qualifications, experience, and cultural fit.",
+                "layout": {
+                    "column": 1,
+                    "order": 1
+                }
+            },
+            {
+                "title": "Training Programs",
+                "icon": "📚",
+                "content": "We offer comprehensive training programs for teachers to enhance their teaching methodologies, classroom management skills, and English proficiency. Our programs are designed by experienced educators and tailored to Thai educational contexts.",
+                "layout": {
+                    "column": 2,
+                    "order": 2
+                }
+            },
+            {
+                "title": "Educational Consulting",
+                "icon": "💼",
+                "content": "Our expert consultants provide guidance on curriculum development, educational policies, and institutional improvement. We help schools create effective English language programs that meet international standards.",
+                "layout": {
+                    "column": 3,
+                    "order": 3
+                }
+            },
+            {
+                "title": "Curriculum Support",
+                "icon": "📋",
+                "content": "We assist educational institutions in developing and implementing comprehensive English language curricula. Our resources and support help schools create engaging and effective learning experiences for students.",
+                "layout": {
+                    "column": 4,
+                    "order": 4
+                }
+            }
+        ]
+    },
+    "clients": {
+        "enabled": true,
+        "title": "Our Clients",
+        "subtitle": "Trusted by leading educational institutions",
+        "layout": {
+            "columns": 4,
+            "alignment": "center",
+            "itemAlignment": "center"
+        },
+        "items": [
+            {
+                "name": "School 1",
+                "logo": "",
+                "layout": {
+                    "column": 1,
+                    "order": 1
+                }
+            },
+            {
+                "name": "School 2",
+                "logo": "",
+                "layout": {
+                    "column": 2,
+                    "order": 2
+                }
+            },
+            {
+                "name": "School 3",
+                "logo": "",
+                "layout": {
+                    "column": 3,
+                    "order": 3
+                }
+            },
+            {
+                "name": "School 4",
+                "logo": "",
+                "layout": {
+                    "column": 4,
+                    "order": 4
+                }
+            }
+        ]
+    },
+    "team": {
+        "enabled": true,
+        "title": "Our Team",
+        "subtitle": "Meet the dedicated professionals behind EDC",
+        "layout": {
+            "columns": 4,
+            "alignment": "center",
+            "itemAlignment": "center"
+        },
+        "members": [
+            {
+                "name": "John Smith",
+                "position": "Managing Director",
+                "image": "images/intro.jpg",
+                "layout": {
+                    "column": 1,
+                    "order": 1
+                }
+            },
+            {
+                "name": "Sarah Johnson",
+                "position": "Head of Recruitment",
+                "image": "images/intro.jpg",
+                "layout": {
+                    "column": 2,
+                    "order": 2
+                }
+            },
+            {
+                "name": "Michael Chen",
+                "position": "Training Coordinator",
+                "image": "images/intro.jpg",
+                "layout": {
+                    "column": 3,
+                    "order": 3
+                }
+            },
+            {
+                "name": "Emily Davis",
+                "position": "Consultant",
+                "image": "images/intro.jpg",
+                "layout": {
+                    "column": 4,
+                    "order": 4
+                }
+            }
+        ]
+    },
+    "gallery": {
+        "enabled": true,
+        "title": "Gallery",
+        "subtitle": "Highlights from our programs and activities",
+        "layout": {
+            "columns": 4,
+            "alignment": "center",
+            "itemAlignment": "center"
+        },
+        "images": [
+            {
+                "src": "images/intro.jpg",
+                "alt": "Gallery Image 1",
+                "layout": {
+                    "column": 1,
+                    "order": 1
+                }
+            },
+            {
+                "src": "images/intro.jpg",
+                "alt": "Gallery Image 2",
+                "layout": {
+                    "column": 2,
+                    "order": 2
+                }
+            },
+            {
+                "src": "images/intro.jpg",
+                "alt": "Gallery Image 3",
+                "layout": {
+                    "column": 3,
+                    "order": 3
+                }
+            },
+            {
+                "src": "images/intro.jpg",
+                "alt": "Gallery Image 4",
+                "layout": {
+                    "column": 4,
+                    "order": 4
+                }
+            },
+            {
+                "src": "images/intro.jpg",
+                "alt": "Gallery Image 5",
+                "layout": {
+                    "column": 1,
+                    "order": 5
+                }
+            },
+            {
+                "src": "images/intro.jpg",
+                "alt": "Gallery Image 6",
+                "layout": {
+                    "column": 2,
+                    "order": 6
+                }
+            },
+            {
+                "src": "images/intro.jpg",
+                "alt": "Gallery Image 7",
+                "layout": {
+                    "column": 3,
+                    "order": 7
+                }
+            },
+            {
+                "src": "images/intro.jpg",
+                "alt": "Gallery Image 8",
+                "layout": {
+                    "column": 4,
+                    "order": 8
+                }
+            }
+        ]
+    },
+    "contact": {
+        "enabled": true,
+        "title": "Contact Us",
+        "subtitle": "Get in touch with us for inquiries",
+        "company": "English Development Consultants Co. Ltd.",
+        "phone": "+66 2 123 4567",
+        "email": "info@edc-thailand.com",
+        "address": "Bangkok, Thailand",
+        "form": {
+            "enabled": true,
+            "emailTo": "info@edc-thailand.com"
+        }
+    },
+    "footer": {
+        "enabled": true,
+        "about": {
+            "title": "About EDC",
+            "content": "English Development Consultants Co. Ltd. is a leading education consulting and teacher recruitment company in Thailand, committed to excellence in English language education."
+        },
+        "quickLinks": [
+            {
+                "text": "Home",
+                "link": "#home"
+            },
+            {
+                "text": "Introduction",
+                "link": "#introduction"
+            },
+            {
+                "text": "Company Overview",
+                "link": "#overview"
+            },
+            {
+                "text": "Services",
+                "link": "#services"
+            },
+            {
+                "text": "Contact",
+                "link": "#contact"
+            }
+        ],
+        "services": [
+            {
+                "text": "Teacher Recruitment",
+                "link": "#services"
+            },
+            {
+                "text": "Training Programs",
+                "link": "#services"
+            },
+            {
+                "text": "Educational Consulting",
+                "link": "#services"
+            },
+            {
+                "text": "Curriculum Support",
+                "link": "#services"
+            }
+        ],
+        "social": {
+            "facebook": "#",
+            "twitter": "#",
+            "linkedin": "#",
+            "instagram": "#"
+        },
+        "copyright": "© 2026 English Development Consultants Co. Ltd. All rights reserved."
+    },
+    "popup": {
+        "enabled": true,
+        "title": "Welcome to EDC!",
+        "description": "Join our team of dedicated educators and make a difference in English language education in Thailand.",
+        "image": "images/intro.jpg",
+        "buttonText": "Learn More",
+        "buttonLink": "#introduction",
+        "backgroundColor": "rgba(26, 54, 93, 0.95)",
+        "textColor": "#ffffff",
+        "buttonColor": "#38a169",
+        "showAgainDuration": 1
+    },
+    "theme": {
+        "colors": {
+            "primary": "#05234d",
+            "primaryLight": "#2c5282",
+            "primaryDark": "#0d1b2a",
+            "secondary": "#38a169",
+            "secondaryLight": "#48bb78",
+            "secondaryDark": "#276749",
+            "backgroundLight": "#f7fafc",
+            "backgroundWhite": "#ffffff",
+            "textDark": "#1a202c",
+            "textGray": "#4a5568",
+            "textLight": "#718096",
+            "borderColor": "#e2e8f0"
+        },
+        "fonts": {
+            "primary": "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+            "headings": "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+        },
+        "typography": {
+            "baseSize": "16px",
+            "h1Size": "3rem",
+            "h2Size": "2.5rem",
+            "h3Size": "1.75rem",
+            "h4Size": "1.5rem",
+            "lineHeight": "1.6"
+        },
+        "buttons": {
+            "primary": "#1a365d",
+            "secondary": "#38a169",
+            "hover": "#2c5282"
+        },
+        "shadows": {
+            "sm": "0 2px 4px rgba(0, 0, 0, 0.1)",
+            "md": "0 4px 6px rgba(0, 0, 0, 0.1)",
+            "lg": "0 10px 15px rgba(0, 0, 0, 0.1)",
+            "xl": "0 20px 25px rgba(0, 0, 0, 0.15)"
+        }
+    },
+    "github": {
+        "repoUrl": "https://github.com/ARIENDELLEJONES/ARIENDELLEJONES.github.io.git",
+        "branch": "master",
+        "username": "ARIENDELLEJONES",
+        "token": ""
+    },
+    "lastUpdated": "2026-03-11T04:25:59.379Z"
+}
