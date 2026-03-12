@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 /**
  * Load navbar from config (not from navbar.html)
  * The navbar is loaded dynamically based on site-config.json
+ * First checks localStorage for admin-saved changes
  */
 async function loadNavbar() {
     const navbarContainer = document.querySelector('.navbar-container');
@@ -21,72 +22,77 @@ async function loadNavbar() {
         return;
     }
 
-    try {
-        // Load config from API
-        const response = await fetch('data/site-config.json');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const config = await response.json();
-        
-        if (!config.navigation || !config.navigation.enabled) {
-            navbarContainer.innerHTML = '';
-            return;
-        }
-        
-        const nav = config.navigation;
-        
-        // Build navbar HTML from config
-        const navbarHTML = `
-            <nav class="navbar">
-                <div class="container">
-                    <a href="${nav.logo.link}" class="logo">
-                        <img src="${config.site.logo}" alt="EDC Logo" 
-                             onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" 
-                             style="max-height: 50px;">
-                        <span style="display: none;">${nav.logo.text}</span>
-                    </a>
-                    
-                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                    
-                    <ul class="nav-links" id="navLinks">
-                        ${nav.menu.sort((a, b) => a.order - b.order).map(item => `
-                            <li><a href="${item.link}" data-section="${item.link.replace('#', '')}">${item.text}</a></li>
-                        `).join('')}
-                        ${nav.applyButton.enabled ? `
-                            <li><a href="${nav.applyButton.link}" class="btn-apply" target="_blank" rel="noopener noreferrer">${nav.applyButton.text}</a></li>
-                        ` : ''}
-                    </ul>
-                </div>
-            </nav>
-            <div class="mobile-overlay" onclick="toggleMobileMenu()"></div>
-        `;
-        
-        navbarContainer.innerHTML = navbarHTML;
-        
-        // Initialize navbar functionality after loading
-        initializeNavbar();
-    } catch (error) {
-        console.error('Error loading navbar from config:', error);
-        // Fallback: try loading from navbar.html file
+    let config;
+    
+    // First check localStorage for admin-saved changes
+    const localStorageConfig = localStorage.getItem('edc_config_backup');
+    if (localStorageConfig) {
         try {
-            const response = await fetch('navbar.html');
-            if (response.ok) {
-                const navbarHTML = await response.text();
-                navbarContainer.innerHTML = navbarHTML;
-                initializeNavbar();
-            }
-        } catch (fallbackError) {
-            console.error('Error loading navbar fallback:', fallbackError);
-            // Fallback: create inline navbar
-            navbarContainer.innerHTML = createFallbackNavbar();
-            initializeNavbar();
+            config = JSON.parse(localStorageConfig);
+            console.log('Navbar loaded from localStorage (admin edits)');
+        } catch (e) {
+            console.warn('Failed to parse localStorage config, falling back to file');
         }
     }
+    
+    // If not in localStorage, load from JSON file
+    if (!config) {
+        try {
+            const response = await fetch('data/site-config.json');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            config = await response.json();
+        } catch (error) {
+            console.error('Error loading navbar config:', error);
+            // Fallback to static navbar
+            navbarContainer.innerHTML = createFallbackNavbar();
+            initializeNavbar();
+            return;
+        }
+    }
+    
+    if (!config.navigation || !config.navigation.enabled) {
+        navbarContainer.innerHTML = '';
+        return;
+    }
+    
+    const nav = config.navigation;
+    
+    // Build navbar HTML from config
+    const navbarHTML = `
+        <nav class="navbar">
+            <div class="container">
+                <a href="${nav.logo.link}" class="logo">
+                    <img src="${config.site.logo}" alt="EDC Logo" 
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" 
+                         style="max-height: 50px;">
+                    <span style="display: none;">${nav.logo.text}</span>
+                </a>
+                
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <ul class="nav-links" id="navLinks">
+                    ${nav.menu.sort((a, b) => a.order - b.order).map(item => `
+                        <li><a href="${item.link}" data-section="${item.link.replace('#', '')}">${item.text}</a></li>
+                    `).join('')}
+                    ${nav.applyButton.enabled ? `
+                        <li><a href="${nav.applyButton.link}" class="btn-apply" target="_blank" rel="noopener noreferrer">${nav.applyButton.text}</a></li>
+                    ` : ''}
+                </ul>
+            </div>
+        </nav>
+        <div class="mobile-overlay" onclick="toggleMobileMenu()"></div>
+    `;
+    
+    navbarContainer.innerHTML = navbarHTML;
+    
+    // Initialize navbar functionality after loading
+    initializeNavbar();
 }
 
 /**

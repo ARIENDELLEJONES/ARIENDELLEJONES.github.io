@@ -49,31 +49,79 @@ async function initSite() {
     }
 }
 
-/**
- * Load site configuration from JSON file
- * First checks localStorage for saved admin changes (for offline editing workflow)
- */
-async function loadSiteConfig() {
-    // First check localStorage for admin-saved changes
-    const localStorageConfig = localStorage.getItem('edc_config_backup');
-    if (localStorageConfig) {
+    /**
+     * Load site configuration from JSON file
+     * Priority: 1. URL parameter (preview), 2. localStorage (admin saves), 3. JSON file
+     * This ensures admin changes are always reflected in preview
+     */
+    async function loadSiteConfig() {
+        // 1. First check URL parameter (for admin preview) - HIGHEST PRIORITY
+        const urlParams = new URLSearchParams(window.location.search);
+        const previewConfig = urlParams.get('preview');
+        if (previewConfig) {
+            try {
+                siteConfig = JSON.parse(decodeURIComponent(atob(previewConfig)));
+                console.log('Loaded config from URL (admin preview)');
+                // Save to localStorage for persistence
+                localStorage.setItem('edc_config_preview', JSON.stringify(siteConfig));
+                localStorage.setItem('edc_config_backup', JSON.stringify(siteConfig));
+                return siteConfig;
+            } catch (e) {
+                console.warn('Failed to parse URL config, falling back to other sources');
+            }
+        }
+        
+        // 2. Check localStorage for admin-saved changes (preview mode)
+        // Try the preview key first, then backup key
+        const localStoragePreview = localStorage.getItem('edc_config_preview');
+        if (localStoragePreview) {
+            try {
+                siteConfig = JSON.parse(localStoragePreview);
+                console.log('Loaded config from localStorage preview');
+                return siteConfig;
+            } catch (e) {
+                console.warn('Failed to parse localStorage preview config');
+            }
+        }
+        
+        // Try backup key
+        const localStorageConfig = localStorage.getItem('edc_config_backup');
+        if (localStorageConfig) {
+            try {
+                siteConfig = JSON.parse(localStorageConfig);
+                console.log('Loaded config from localStorage (admin edits)');
+                return siteConfig;
+            } catch (e) {
+                console.warn('Failed to parse localStorage config, falling back to file');
+            }
+        }
+        
+        // 3. Fall back to loading from JSON file
         try {
-            siteConfig = JSON.parse(localStorageConfig);
-            console.log('Loaded config from localStorage (admin edits)');
+let response;
+try {
+  response = await fetch('/api/config');
+} catch (e) {
+  // Fallback for static mode
+  response = await fetch('./data/site-config.json');
+}
+if (!response.ok) {
+  throw new Error('Failed to load site configuration');
+}
+            if (!response.ok) {
+                throw new Error('Failed to load site configuration');
+            }
+            siteConfig = await response.json();
+            
+            // Save to localStorage for future use
+            localStorage.setItem('edc_config_backup', JSON.stringify(siteConfig));
+            
             return siteConfig;
         } catch (e) {
-            console.warn('Failed to parse localStorage config, falling back to file');
+            console.error('Error loading config file:', e);
+            throw e;
         }
     }
-    
-    // Fall back to loading from JSON file
-    const response = await fetch('./data/site-config.json');
-    if (!response.ok) {
-        throw new Error('Failed to load site configuration');
-    }
-    siteConfig = await response.json();
-    return siteConfig;
-}
 
 /**
  * Apply theme settings to CSS variables
@@ -178,7 +226,7 @@ async function loadHero() {
     const config = siteConfig.hero;
     if (!config || !config.enabled) return;
     
-    const hero = document.getElementById('hero-section');
+const hero = document.querySelector('.hero');
     if (hero) {
         hero.innerHTML = `
             <div class="hero-content">
@@ -204,7 +252,7 @@ async function loadIntroduction() {
     const config = siteConfig.introduction;
     if (!config || !config.enabled) return;
     
-    const section = document.getElementById('introduction-section');
+const section = document.getElementById('introduction');
     if (section) {
         section.innerHTML = `
             <div class="container">
@@ -231,7 +279,7 @@ async function loadOverview() {
     const config = siteConfig.overview;
     if (!config || !config.enabled) return;
     
-    const section = document.getElementById('overview-section');
+const section = document.getElementById('overview');
     if (section) {
         section.innerHTML = `
             <div class="container">
@@ -263,7 +311,7 @@ async function loadServices() {
     const config = siteConfig.services;
     if (!config || !config.enabled) return;
     
-    const section = document.getElementById('services-section');
+const section = document.getElementById('services');
     if (section) {
         section.innerHTML = `
             <div class="container">
@@ -292,7 +340,7 @@ async function loadClients() {
     const config = siteConfig.clients;
     if (!config || !config.enabled) return;
     
-    const section = document.getElementById('clients-section');
+const section = document.getElementById('clients');
     if (section) {
         section.innerHTML = `
             <div class="container">
@@ -319,7 +367,7 @@ async function loadTeam() {
     const config = siteConfig.team;
     if (!config || !config.enabled) return;
     
-    const section = document.getElementById('team-section');
+const section = document.getElementById('team');
     if (section) {
         section.innerHTML = `
             <div class="container">
@@ -354,7 +402,7 @@ async function loadGallery() {
     const config = siteConfig.gallery;
     if (!config || !config.enabled) return;
     
-    const section = document.getElementById('gallery-section');
+const section = document.getElementById('gallery');
     if (section) {
         section.innerHTML = `
             <div class="container">
@@ -386,7 +434,7 @@ async function loadContact() {
     const config = siteConfig.contact;
     if (!config || !config.enabled) return;
     
-    const section = document.getElementById('contact-section');
+const section = document.getElementById('contact');
     if (section) {
         section.innerHTML = `
             <div class="container">
