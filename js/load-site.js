@@ -98,10 +98,11 @@ async function initSite() {
         
         // 3. Fall back to loading from JSON file
         try {
-let response;
-try {
-  response = await fetch('/api/config');
-} catch (e) {
+const API_BASE = 'http://54.252.186.9/api';
+ let response;
+ try {
+  response = await fetch(`${API_BASE}/config`);
+ } catch (e) {
   // Fallback for static mode
   response = await fetch('./data/site-config.json');
 }

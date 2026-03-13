@@ -759,5 +759,29 @@ const ImageUploader = {
     }
 };
 
+const API_BASE = 'http://54.252.186.9/api';
+
+ImageUploader.uploadImage = async function(file, onSuccess) {
+  const formData = new FormData();
+  formData.append('image', file);
+  
+  try {
     const res = await fetch(`${API_BASE}/upload`, {
+      method: 'POST',
+      body: formData
+    });
+    const result = await res.json();
+    if (result.success) {
+      onSuccess(result.path);
+    } else {
+      alert('Upload failed: ' + result.error);
+    }
+  } catch (e) {
+    console.warn('API upload failed:', e);
+    // Fallback to old download method
+  }
+};
+
+// Make globally available
+window.ImageUploader = ImageUploader;
 
