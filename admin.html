@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - EDC Website</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-body">
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="admin-header-content">
+            <div class="admin-logo">
+                <h1>EDC Admin</h1>
+                <span class="admin-badge">Dashboard</span>
+            </div>
+            <div class="admin-actions">
+                <button id="auto-save-btn" class="btn btn-success" onclick="AdminEditor.autoSaveAndPublish()">
+                    <span>🚀</span> Auto Save
+                </button>
+                <button id="export-btn" class="btn btn-outline" onclick="AdminEditor.exportAll()">
+                    <span>📥</span> Export All
+                </button>
+                <button id="download-config-btn" class="btn btn-secondary" onclick="AdminEditor.downloadConfig()">
+                    <span>📄</span> Download Config
+                </button>
+                <button id="preview-btn" class="btn btn-secondary" onclick="AdminEditor.previewSite()">
+                    <span>👁️</span> Preview Site
+                </button>
+                <button id="save-btn" class="btn btn-primary">
+                    <span>💾</span> Save Changes
+                </button>
+                <button id="reset-btn" class="btn btn-danger">
+                    <span>↩️</span> Reset
+                </button>
+                <a href="index.html" class="btn btn-outline" target="_blank">
+                    <span>🌐</span> View Live Site
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Admin Main Layout -->
+    <div class="admin-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="admin-sidebar">
+            <nav class="admin-nav">
+                <ul class="admin-nav-list">
+                    <li>
+                        <a href="#" class="admin-nav-item active" data-section="general">
+                            <span class="nav-icon">⚙️</span>
+                            <span class="nav-text">General Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="admin-nav-item" data-section="navigation">
+                            <span class="nav-icon">🔗</span>
+                            <span class="nav-text">Navigation</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="admin-nav-item" data-section="hero">
+                            <span class="nav-icon">🏠</span>
+                            <span class="nav-text">Hero Section</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="admin-nav-item" data-section="content">
+                            <span class="nav-icon">📝</span>
+                            <span class="nav-text">Content Editor</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="admin-nav-item" data-section="theme">
+                            <span class="nav-icon">🎨</span>
+                            <span class="nav-text">Theme & Colors</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="admin-nav-item" data-section="images">
+                            <span class="nav-icon">🖼️</span>
+                            <span class="nav-text">Image Management</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="admin-nav-item" data-section="popup">
+                            <span class="nav-icon">📢</span>
+                            <span class="nav-text">Popup Editor</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="admin-nav-item" data-section="github">
+                            <span class="nav-icon">📦</span>
+                            <span class="nav-text">GitHub Publish</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="admin-sidebar-footer">
+                <p>Last saved: <span id="last-saved">Never</span></p>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="admin-main">
+            <div class="admin-content">
+                <div id="editor-content" class="editor-content">
+                    <!-- Dynamic content will be loaded here -->
+                    <div class="loading-spinner">
+                        <div class="spinner"></div>
+                        <p>Loading configuration...</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Notification Container -->
+    <div id="notifications" class="notifications-container"></div>
+
+    <!-- Scripts -->
+    <script src="js/image-uploader.js"></script>
+    <script src="js/admin-editor.js"></script>
+    <script src="js/github-publisher.js"></script>
+    <script>
+        // Initialize Admin Editor
+        document.addEventListener('DOMContentLoaded', function() {
+            AdminEditor.init();
+        });
+    </script>
+</body>
+</html>
+
