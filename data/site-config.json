@@ -73,7 +73,7 @@
         "tagline": "Be Part of Our Team",
         "buttonText": "Apply Now",
         "buttonLink": "http://54.252.186.9",
-        "backgroundImage": "images/intro.jpg",
+        "backgroundImage": "images/uploads/hero-hero-hero-intro-temporary-1773291683276-1773294225171-1773374407866-1773376142186.webp",
         "overlayColor": "rgba(26, 54, 93, 0.85)",
         "overlayGradient": "rgba(26, 54, 93, 0.9), rgba(56, 161, 105, 0.3)",
         "textColor": "#ffffff"
@@ -86,7 +86,7 @@
             "With years of experience in the education sector, we understand the importance of quality English language education and its impact on future generations. Our mission is to bridge the gap between talented teachers and schools that need them.",
             "We provide comprehensive recruitment services, training programs, and ongoing support to ensure both teachers and educational institutions achieve their goals. Partner with us to transform English language education in Thailand."
         ],
-        "image": "images/intro.jpg",
+        "image": "images/uploads/intro-hero-hero-intro-temporary-1773291683276-1773294225171-1773374407866-1773376329555.webp",
         "imageAlt": "EDC Office or Team"
     },
     "overview": {
@@ -391,7 +391,7 @@
         "enabled": true,
         "title": "Welcome to EDC!",
         "description": "Join our team of dedicated educators and make a difference in English language education in Thailand.",
-        "image": "images/intro.jpg",
+        "image": "images/uploads/popup-intro-hero-hero-intro-temporary-1773291683276-1773294225171-1773374407866-1773376329555-1773376362594.webp",
         "buttonText": "Learn More",
         "buttonLink": "#introduction",
         "backgroundColor": "rgba(26, 54, 93, 0.95)",
@@ -444,5 +444,5 @@
         "username": "ARIENDELLEJONES",
         "token": ""
     },
-    "lastUpdated": "2026-03-11T04:25:59.379Z"
+    "lastUpdated": "2026-03-13T04:32:42.868Z"
 }
