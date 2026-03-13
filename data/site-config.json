@@ -73,7 +73,7 @@
         "tagline": "Be Part of Our Team",
         "buttonText": "Apply Now",
         "buttonLink": "http://54.252.186.9",
-        "backgroundImage": "images/intro.jpg",
+        "backgroundImage": "images/uploads/hero-hero-intro-temporary-1773291683276-1773294225171-1773374407866.webp",
         "overlayColor": "rgba(26, 54, 93, 0.85)",
         "overlayGradient": "rgba(26, 54, 93, 0.9), rgba(56, 161, 105, 0.3)",
         "textColor": "#ffffff"
@@ -444,5 +444,5 @@
         "username": "ARIENDELLEJONES",
         "token": ""
     },
-    "lastUpdated": "2026-03-13T03:44:15.895Z"
+    "lastUpdated": "2026-03-13T04:02:10.994Z"
 }
