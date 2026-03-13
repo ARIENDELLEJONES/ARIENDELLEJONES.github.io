@@ -30,18 +30,27 @@ const AdminEditor = {
     loadConfig: async function() {
         try {
             // For static hosting (GitHub Pages) - load directly from JSON file
-const API_BASE = 'http://54.252.186.9/api';\nlet response;\n            try {\n              response = await fetch(`${API_BASE}/config`);\n            } catch (e) {\n              response = await fetch('data/site-config.json');\n            }
+const API_BASE = 'http://54.252.186.9/api';
+let response;
+           
+ try 
+ {
+             
+     response = await fetch(`${API_BASE}/config`);
+            } catch (e) {
+              response = await fetch('data/site-config.json');
+            }
             if (!response.ok) {
                 throw new Error('Failed to fetch config');
             }
             this.config = await response.json();
             return this.config;
-        } catch (error) {
-            console.error('Error loading config:', error);
-            this.showNotification('Error loading configuration. Make sure data/site-config.json exists!', 'error');
-            return null;
-        }
-    },
+
+} catch (error) {
+    console.error('Error loading config:', error);
+    this.showNotification('Error loading configuration. Make sure data/site-config.json exists!', 'error');
+    return null;
+}},
     
     /**
      * Auto Save and Publish to GitHub
