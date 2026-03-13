@@ -122,9 +122,7 @@ let response;
     saveConfig: async function(showMessage = true) {
         try {
             // Save to localStorage as backup
-            localStorage.setItem('edc_config_backup', JSON.stringify(this.config));
-            
-            this.hasChanges = false;
+            localStorage.setItem('edc_config_backup', JSON.stringify(this.config));\n            \n            // Live save to EC2 backend API\n            try {\n              const API_BASE = 'http://54.252.186.9/api';\n              const response = await fetch(`${API_BASE}/config`, {\n                method: 'POST',\n                headers: {'Content-Type': 'application/json'},\n                body: JSON.stringify(this.config)\n              });\n              if (response.ok) {\n                console.log('✅ Live save to backend successful');\n              } else {\n                console.warn('Backend save failed:', response.status);\n              }\n            } catch (error) {\n              console.error('Backend save error:', error);\n            }\n            \n            this.hasChanges = false;
             if (showMessage) {
                 this.showNotification('Changes saved! Click "Download Config" to save the file, then replace data/site-config.json', 'success');
                 
