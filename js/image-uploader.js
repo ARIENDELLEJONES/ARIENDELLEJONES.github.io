@@ -759,5 +759,5 @@ const ImageUploader = {
     }
 };
 
-ImageUploader.uploadImage = async function(file, onSuccess) {\n  const formData = new FormData();\n  formData.append('image', file);\n  \n  try {\n    const res = await fetch('/api/upload', {\n      method: 'POST',\n      body: formData\n    });\n    const result = await res.json();\n    if (result.success) {\n      onSuccess(result.path);\n    } else {\n      alert('Upload failed: ' + result.error);\n    }\n  } catch (e) {\n    // Fallback to old method\n    console.warn('API upload failed:', e);\n  }\n};\n\n// Make globally available\nwindow.ImageUploader = ImageUploader;\n
+    const res = await fetch(`${API_BASE}/upload`, {
 
